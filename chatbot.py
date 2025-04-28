@@ -3,7 +3,7 @@ import requests
 
 st.title("Chatbot basic")
 
-chat_url = "https://my-container-app.graywave-84694386.westus2.azurecontainerapps.io/chat/"
+chat_url = "http://localhost:8000/chat/"
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
