@@ -21,6 +21,9 @@ jobs:
         run: |
           az acr login --name ${{ secrets.CONTAINER_REGISTRY }}
 
+      - name: Set Environment Variables
+        run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+
       - name: Build and Push Docker Image
         run: |
           docker build -t ${{ secrets.CONTAINER_REGISTRY }}/my-container-app:latest .
